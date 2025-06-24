@@ -4,14 +4,6 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  const [params, setParams] = useState("Nada");
-  const api = axios.create({
-    baseURL: "https://api.twitch.tv/helix",
-  });
-
-  function getUsers() {
-    api.get("/users");
-  }
 
   return (
     <div>
@@ -23,7 +15,6 @@ function App() {
         Connect with Twitch
       </a>
 
-      <p>{params.slice(14, params.indexOf("&scope"))}</p>
     </div>
   );
 }
