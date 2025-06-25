@@ -20,7 +20,7 @@ function AuthPage() {
   function getUsers() {
     api
       .get("/users?username=ojoojao")
-      .then((response) => setUsers([JSON.stringify(response.data)]))
+      .then((response) => setUsers(response.data.data[0]))
       .catch((err) => console.error("Erro: " + err));
   }
 
@@ -31,7 +31,7 @@ function AuthPage() {
       <button onClick={getUsers} type="button">
         Users
       </button>
-      <p>{users}</p>
+      <p>{JSON.stringify(users)}</p>
       <a href="http://localhost:5173/viewers">Clique aqui para seguir</a>
     </div>
   );
